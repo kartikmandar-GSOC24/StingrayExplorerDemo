@@ -1,7 +1,6 @@
 import panel as pn
-from functions.LightCurve.LightCurveAnalysisPanel import create_light_curve_analysis_panel
 from utils.textual_strings import WELCOME_MESSAGE, HEADER_STRING
-
+from utils.sidebar import create_sidebar  # Import the create_sidebar function
 
 # Load external stylesheet
 external_stylesheets = ['./assets/stylesheets/app.css']
@@ -20,32 +19,16 @@ welcome_message = pn.pane.Markdown(
     styles={"font-size": "16px", "align": "start"}
 )
 
-# Create sidebar with buttons for navigation
-light_curve_button = pn.widgets.Button(name="Light Curve")
-
-# Define button behaviors
-def show_light_curve(event):
-    main[0] = create_light_curve_analysis_panel  # Replace main content with light curve analysis pane
-
-light_curve_button.on_click(show_light_curve)
-
-
-# Create a sidebar layout
-sidebar = pn.Column(
-    light_curve_button,
-    css_classes=['pn-Column']  # Apply CSS class to sidebar
-)
-
 # Create main content layout
-main = pn.Row(
-    pn.Column(
-        header,
-        welcome_message,
-        css_classes=['main-content'],  # Apply CSS class to main content
-        align="center"
-    ),
-    sizing_mode="stretch_width"
+main = pn.Column(
+    header,
+    welcome_message,
+    css_classes=['main-content'],  # Apply CSS class to main content
+    align="center"
 )
+
+# Create sidebar using the create_sidebar function and pass the main content layout
+sidebar = create_sidebar(main)
 
 # Create a template with a sidebar that can be toggled with a hamburger menu
 layout = pn.template.MaterialTemplate(

@@ -1,6 +1,9 @@
-## This section contains the textual strings used in the app.py
+## This section contains the textual strings used in the header.py
 
 HEADER_STRING = "<h1>Welcome to the Stingray Explorer Dashboard</h1>"
+
+
+## This section contains the textual strings used in the app.py
 
 WELCOME_MESSAGE = """
 <div style='text-align: center'>
