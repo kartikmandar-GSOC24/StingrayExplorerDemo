@@ -24,14 +24,13 @@ main = pn.Column(
     header,
     welcome_message,
     css_classes=['main-content'],  # Apply CSS class to main content
-    align="center"
 )
 
 # Create sidebar using the create_sidebar function and pass the main content layout
 sidebar = create_sidebar(main)
 
 # Create a template with a sidebar that can be toggled with a hamburger menu
-layout = pn.template.MaterialTemplate(
+layout = pn.template.FastListTemplate(
     title="Stingray Explorer",
     logo="./assets/images/stingray_logo.png",
     collapsed_sidebar=True,
