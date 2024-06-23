@@ -1,12 +1,12 @@
 import panel as pn
-from .DataIngestion import create_data_ingestion_tab
 
 def create_light_curve_analysis_panel():
     # Initialize Panel extension
     pn.extension()
 
     # Tab 1: Data ingestion (using content from DataIngesion.py)
-    tab_data_ingestion = create_data_ingestion_tab()
+    tab1_content = pn.pane.Markdown("### Light Curve\n\nThis is the content for Light Curve.")
+    tab1 = pn.Column(tab1_content, name="Light Curve")
 
     # Tab 2: Light Curve
     tab2_content = pn.pane.Markdown("### Light Curve\n\nThis is the content for Light Curve.")
@@ -54,7 +54,7 @@ def create_light_curve_analysis_panel():
 
     # Create Tabs
     tabs = pn.Tabs(
-        ("Data ingestion", tab_data_ingestion),
+        ("Data ingestion", tab1),
         ("Light Curve", tab2),
         ("GTI", tab3),
         ("tab4", tab4),

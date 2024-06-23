@@ -65,6 +65,3 @@ WELCOME_MESSAGE = """
     <p>We hope you find this dashboard useful for your research!</p>
 </div>
 """
-
-
-
