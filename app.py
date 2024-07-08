@@ -1,6 +1,7 @@
 import panel as pn
 from utils.textualStrings import WELCOME_MESSAGE, HEADER_STRING
 from utils.sidebar import create_sidebar  # Import the create_sidebar function
+from utils.footer import footer
 
 # Initialize Panel extension
 pn.extension(notifications=True)
@@ -37,7 +38,7 @@ layout = pn.template.FastListTemplate(
     header_accent_base_color="#00A170",
     neutral_color="#D3D3D3",
     corner_radius=5,
-    main=[main],
+    main=[main, footer],
     header_background="#000000",
     sidebar_width=250,
     meta_author="Kartik Mandar",
